@@ -1,0 +1,166 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<title>
+			
+		</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="Content-Script-Type" content="text/javascript" />
+		<meta name="generator" content="Pharo - Pillar - Ecstatic" />
+		<meta name="robots" content="index,follow" />
+		<meta name="keywords" content="" />
+		
+		<link rel="stylesheet" type="text/css" media="screen, projection" href="theme/screen.css" />
+		<link rel="stylesheet" type="text/css" media="print" href="theme/print.css" />
+		<!--[if IE]><link rel="stylesheet" type="text/css" media="screen, projection" href="/wiki/files/PRBlueprintLibrary/ie.css"/><![endif]-->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="theme/pure.css" />
+		<!--link rel="canonical" href="http://esug.org/wiki/pier/About/membership" /-->
+		
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	</head>
+	<body class="page viewcommand defaultview">
+		<div class="container">
+			<div class="header">
+				<div class="title">	
+					<div style="float:left; margin-right:15px">
+						<a href="index.html">
+							 <img alt="My website" src="http://placehold.it/200x200">
+						</a>
+					</div>
+					<div style="margin:15px">
+						<h1>My website</h1>
+					  	<h2>My short description</h2>
+					</div>
+				</div>
+				<div class="children">					
+					<ul>
+						
+						<li>
+							<a class="page" href="/index.html">Home</a>
+						</li>
+						
+					</ul>
+				</div>
+				<div class="submenue">
+					<ul>
+						
+					</ul>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="body">
+				<div class="contents">
+					<section>
+<h1>Creating your first site</h1>
+
+<p>
+A Ecstatic site consists basically on a collection of Pillar files, and configuration file <code>pillar.conf</code> describing some basic information of your site. Ecstatic generates automatically the basic structure of your site and an example configuration file using its <code>createsite</code> command from the command line. Place yourself on the directory where you want to develop your site and execute
+</p>
+<p>
+<figure><pre><code>$ ecstatic createsite	</code></pre><figcaption></figcaption></figure>
+
+</p>
+<p>
+That command will generate the minimal structure for it. Right now, this minimal structure consists in just the <code>pillar.conf</code> file.
+</p>
+<section>
+<h2>Choosing a theme</h2>
+
+<p>
+Ecstatic provides several built in themes to customize the look and feel for your website. You can of course also develop your own. The choice of themes is for the moment the following:
+</p>
+<ul>
+<li> pure</li>
+<li> perso</li>
+<li> candy</li>
+<li> concise</li>
+</ul>
+
+<p>
+To configure your website to use a particular theme, you can use the <code>theme [name]</code> command, as follows:
+</p>
+<p>
+<figure><pre><code>$ ecstatic theme candy</code></pre><figcaption></figcaption></figure>
+
+</p>
+<p>
+You can change the theme for your website at any time.
+</p>
+<p class="Notice!">Themes are not forced to provide all kind of layouts for your website. For example, not all of them may provide a blog post layout. So choose carefully.</p>
+</section><section>
+<h2>Creating your first page</h2>
+
+<p>
+Ecstatic pages are written in pillar. Every <code>.pillar</code> file found in your website will get translated to html. Create for example, an <code>index.pillar</code> file to be the entry point of our website and put inside it some pillar.
+</p>
+<p>
+<figure><pre><code class="html">!This is my ecstatic website
+
+I can write 
+- pillar
+- {html: plain html}
+
+All this is supported by +Pharo&gt;http://pharo.org/web/files/pharo.png+</code></pre><figcaption></figcaption></figure>
+
+</p>
+</section><section>
+<h2>Generate your site</h2>
+
+<p>
+Once you have your pillar files ready to go, you can generate your site using the <code>generate</code> command, as follows:
+</p>
+<p>
+<figure><pre><code>$ ecstatic generate</code></pre><figcaption></figcaption></figure>
+
+</p>
+<p>
+If everything went ok, you will have your site generated in the <code>_site</code> folder. You can deploy it anywhere you want by just copying your <code>_site</code> folder you your destination
+</p></section></section>
+				</div>
+			</div>
+		</div>
+		<div class="footer container-fluid">
+			<div class="madeby">
+				Pure theme powered by <a class="external" href="http://www.pharo.org">pharo</a> | <a class="external" href="http://www.smalltalkhub.com/#!/~Pier/Pillar">pillar</a> | <a class="external" href="http://guillep.github.io/ecstatic/">Ecstatic</a>
+			</div>
+
+		<script>
+		$(document).ready(function() {
+		    $('dt').each(function() {
+		        var $dt = $(this),
+		        $selection = $dt.next('dd').andSelf();
+		        $selection.wrapAll('<div class="col-md-4">');
+		    });
+			$('dd').find('br').remove();
+			$('dt').contents().unwrap().wrap("<h3/>");
+			$('dd').contents().unwrap().wrap("<p/>");
+			$('dl').wrap("<div class='row multi-columns-row'/>");
+			$('dl').contents().unwrap();
+		});
+		function transformAnnotatedParagraphs(pClass) {
+		    $("p." + pClass).wrap("<div class='alert alert-" + pClass + "' role='alert'/>" );
+		};
+		transformAnnotatedParagraphs('success');
+		transformAnnotatedParagraphs('info');
+		transformAnnotatedParagraphs('warning');
+		transformAnnotatedParagraphs('danger');
+		</script>
+		<script type="text/javascript">
+				/* analytics */
+				/*<![CDATA[*/
+					var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+					document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+				/*]]>*/
+			</script>
+			<script type="text/javascript">
+/*<![CDATA[*/var pageTracker = _gat._getTracker('UA-2892391-1');
+			pageTracker._initData();
+			pageTracker._trackPageview();/*]]>*/
+			</script>
+		</div>
+	</body>
+</html>
