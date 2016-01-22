@@ -55,26 +55,73 @@
 			<div class="body">
 				<div class="contents">
 					<section>
-<h1>STIC ASIA PROJECT ...</h1>
+<h1>Creating your first site</h1>
 
 <p>
-Hi! This is your Ecstatic website. In Ecstatic webpages are described in the Pillar markup language.
+A Ecstatic site consists basically on a collection of Pillar files, and configuration file <code>pillar.conf</code> describing some basic information of your site. Ecstatic generates automatically the basic structure of your site and an example configuration file using its <code>createsite</code> command from the command line. Place yourself on the directory where you want to develop your site and execute
+</p>
+<p>
+<figure><pre><code>mkdir mySite
+cd mySite
+$ ecstatic createsite	</code></pre><figcaption></figcaption></figure>
+
+</p>
+<p>
+That command will generate the minimal structure for it. Right now, this minimal structure consists in just the <code>pillar.conf</code> file.
 </p>
 <section>
-<h2>Project description</h2>
+<h2>Choosing a theme</h2>
 
 <p>
-STIC ASIA is about Wireless Sensors Networks and Environment Modelling
+Ecstatic provides several built in themes to customize the look and feel for your website. You can of course also develop your own. The choice of themes is for the moment the following:
+</p>
+<ul>
+<li> pure</li>
+<li> perso</li>
+<li> candy</li>
+<li> concise</li>
+</ul>
+
+<p>
+To configure your website to use a particular theme, you can use the <code>theme [name]</code> command, as follows:
+</p>
+<p>
+<figure><pre><code>$ ecstatic theme candy</code></pre><figcaption></figcaption></figure>
+
+</p>
+<p>
+You can change the theme for your website at any time.
+</p>
+<p class="Notice!">Themes are not forced to provide all kind of layouts for your website. For example, not all of them may provide a blog post layout. So choose carefully.</p>
+</section><section>
+<h2>Creating your first page</h2>
+
+<p>
+Ecstatic pages are written in pillar. Every <code>.pillar</code> file found in your website will get translated to html. Create for example, an <code>index.pillar</code> file to be the entry point of our website and put inside it some pillar.
+</p>
+<p>
+<figure><pre><code class="html">!This is my ecstatic website
+
+I can write 
+- pillar
+- {html: plain html}
+
+All this is supported by +Pharo&gt;http://pharo.org/web/files/pharo.png+</code></pre><figcaption></figcaption></figure>
+
 </p>
 </section><section>
-<h2>Partners</h2>
+<h2>Generate your site</h2>
 
-<ul>
-<li> UBO/LABSTICC</li>
-<li> UMMISCO (IRD/UPMC)</li>
-<li> CTU (Can Tho University)</li>
-</ul>
-</section></section>
+<p>
+Once you have your pillar files ready to go, you can generate your site using the <code>generate</code> command, as follows:
+</p>
+<p>
+<figure><pre><code>$ ecstatic generate</code></pre><figcaption></figcaption></figure>
+
+</p>
+<p>
+If everything went ok, you will have your site generated in the <code>_site</code> folder. You can deploy it anywhere you want by just copying your <code>_site</code> folder you your destination
+</p></section></section>
 				</div>
 			</div>
 		</div>
